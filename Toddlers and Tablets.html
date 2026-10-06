@@ -1,0 +1,220 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Toddlers and Tablets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<style>
+/* Layout: website-builder style. Sticky top menu, full-width blue hero, full-width bands alternating white and light blue, centred section titles, card grids, dark blue footer */
+:root{
+  --bg:#ffffff; --ink:#26303a; --muted:#5d6874; --line:#d9e3ec;
+  --blue:#2f6fa8; --blue-dark:#1d4569; --blue-light:#eef5fb; --blue-mid:#bcd5ea; --blue-soft:#d7e8f6;
+  --on-blue:#ffffff;
+  --body:"Source Sans 3", "Segoe UI", Arial, sans-serif;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --bg:#ffffff; color-scheme:light }}
+:root[data-theme="dark"]{ --bg:#ffffff; color-scheme:light }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.08rem;line-height:1.6;margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+svg{display:block}
+.inner{max-width:1040px;margin:0 auto;padding-inline:20px}
+.band{padding-block:72px}
+.band.tint{background:var(--blue-light)}
+.band-head{text-align:center;display:grid;gap:10px;justify-items:center;margin-bottom:40px}
+.band-head h2{font-size:clamp(1.8rem,5vw,2.4rem);color:var(--blue-dark)}
+.band-head h2::after{content:"";display:block;width:56px;height:3px;background:var(--blue);margin:14px auto 0}
+.band-head p{color:var(--muted);max-width:56ch}
+
+/* menu */
+.menu{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.menu .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--blue-dark);text-decoration:none}
+.menu nav{display:flex;gap:22px;flex-wrap:wrap}
+.menu nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.98rem;padding-block:4px;border-bottom:2px solid transparent}
+.menu nav a:hover,.menu nav a:focus-visible{color:var(--blue);border-bottom-color:var(--blue);outline:none}
+@media (max-width:640px){.menu nav{gap:14px}.menu nav a{font-size:.92rem}}
+
+/* hero */
+.hero{background:var(--blue);color:var(--on-blue)}
+.hero .inner{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding-block:80px}
+.hero-text{display:grid;gap:18px;min-width:0}
+.hero h1{font-size:clamp(2.4rem,7vw,3.6rem)}
+.hero p{font-size:1.2rem;max-width:46ch}
+.btn{justify-self:start;display:inline-block;background:var(--on-blue);color:var(--blue-dark);font-weight:700;text-decoration:none;padding:12px 26px;border-radius:999px}
+.btn:hover,.btn:focus-visible{background:var(--blue-soft);outline:none}
+.hero-art{width:100%;max-width:340px;justify-self:center;height:auto}
+@media (max-width:760px){.hero .inner{grid-template-columns:1fr;padding-block:56px}.hero-art{max-width:220px}}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about p{font-size:1.12rem}
+.quote{font-family:var(--display);font-size:1.5rem;line-height:1.35;color:var(--blue-dark);border-left:4px solid var(--blue);padding-left:20px}
+@media (max-width:760px){.about{grid-template-columns:1fr;gap:24px}}
+
+/* numbers */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.stat{display:grid;gap:6px;align-content:start;min-width:0}
+.stat b{font-family:var(--display);font-size:3rem;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted)}
+@media (max-width:640px){.stats{grid-template-columns:1fr;gap:32px}}
+
+/* guideline */
+.ages{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:760px;margin:0 auto}
+.age{background:var(--bg);border-radius:10px;padding:32px 24px;text-align:center;display:grid;gap:8px;box-shadow:0 2px 14px rgba(29,69,105,.08)}
+.age small{text-transform:uppercase;letter-spacing:.1em;font-weight:700;font-size:.85rem;color:var(--muted)}
+.age strong{font-family:var(--display);font-size:2rem;color:var(--blue)}
+@media (max-width:560px){.ages{grid-template-columns:1fr}}
+
+/* findings */
+.findings{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.finding{border:1px solid var(--line);border-radius:10px;padding:24px;display:grid;gap:10px;align-content:start;min-width:0}
+.topic{justify-self:start;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);background:var(--blue-light);border-radius:999px;padding:3px 12px}
+.finding p{font-size:1.05rem}
+@media (max-width:640px){.findings{grid-template-columns:1fr}}
+
+/* swaps */
+.swaps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.swap{background:var(--bg);border-radius:10px;padding:28px 24px;display:grid;gap:12px;align-content:start;min-width:0;box-shadow:0 2px 14px rgba(29,69,105,.08)}
+.icon{width:60px;height:60px;border-radius:50%;background:var(--blue-light);display:grid;place-items:center}
+.icon svg{width:30px;height:30px}
+.swap h3{font-size:1.3rem;color:var(--blue-dark)}
+.swap p{font-size:1rem}
+.try{border-top:1px solid var(--line);padding-top:12px;color:var(--muted)}
+.try span{font-weight:700;color:var(--blue)}
+@media (max-width:860px){.swaps{grid-template-columns:1fr;max-width:560px;margin:0 auto}}
+
+/* closing */
+.links{max-width:720px;margin:0 auto;text-align:center;display:grid;gap:18px}
+.links p{font-size:1.12rem}
+.closing{background:var(--blue);color:var(--on-blue)}
+.closing .inner{padding-block:56px;text-align:center}
+.closing p{font-family:var(--display);font-size:clamp(1.5rem,4.5vw,2.1rem);line-height:1.3;max-width:28ch;margin:0 auto;text-wrap:balance}
+
+footer{background:var(--blue-dark);color:var(--blue-soft);font-size:.92rem}
+footer .inner{padding-block:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+
+<header class="menu">
+  <div class="inner">
+    <a class="logo" href="#top">Toddlers and Tablets</a>
+    <nav aria-label="Main">
+      <a href="#guideline">Guideline</a>
+      <a href="#research">Research</a>
+      <a href="#swaps">Swaps</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="hero-text">
+      <h1>Small swaps, big wins</h1>
+      <p>A simple guide to screen time for parents of kids under 5.</p>
+      <a class="btn" href="#swaps">See the 3 swaps</a>
+    </div>
+    <svg class="hero-art" viewBox="0 0 160 130" aria-hidden="true">
+      <rect x="20" y="14" width="96" height="100" rx="10" fill="#2f6fa8" stroke="#ffffff" stroke-width="4"/>
+      <rect x="31" y="26" width="74" height="72" rx="3" fill="#d7e8f6"/>
+      <circle cx="68" cy="106" r="3.5" fill="#ffffff"/>
+      <path d="M56 70 a12 12 0 1 0 14 -16 a9 9 0 1 1 -14 16z" fill="#2f6fa8"/>
+      <rect x="104" y="64" width="44" height="34" rx="8" fill="#ffffff"/>
+      <path d="M114 97 l-2 12 l12 -12z" fill="#ffffff"/>
+      <circle cx="117" cy="81" r="3" fill="#2f6fa8"/><circle cx="126" cy="81" r="3" fill="#2f6fa8"/><circle cx="135" cy="81" r="3" fill="#2f6fa8"/>
+    </svg>
+  </div>
+</section>
+
+<section class="band">
+  <div class="inner about">
+    <p>The first five years are when kids build their sleep habits, language and social skills. Research from Canada and other countries shows that time on phones and tablets during these years is linked to shorter sleep and slower speech and social development.</p>
+    <p class="quote">You're not a bad parent for handing over the phone. We've all done it in the grocery line.</p>
+  </div>
+</section>
+
+<section class="band tint" id="guideline">
+  <div class="inner">
+    <div class="band-head">
+      <h2>Canada's screen time guideline</h2>
+      <p>How much screen time is recommended for young children.</p>
+    </div>
+    <div class="ages">
+      <div class="age"><small>Under 2 years</small><strong>None</strong><span>No screen time</span></div>
+      <div class="age"><small>2 to 4 years</small><strong>1 hour</strong><span>a day at most</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="research">
+  <div class="inner">
+    <div class="band-head">
+      <h2>What the research shows</h2>
+    </div>
+    <div class="stats" style="margin-bottom:56px">
+      <div class="stat"><b>2×</b><span>the odds of delayed talking for every extra 30 minutes a day at 18 months</span></div>
+      <div class="stat"><b>1 hr+</b><span>of daily screens linked to kindergarteners struggling with language and social skills</span></div>
+      <div class="stat"><b>41</b><span>studies combined in one review linking problem phone use to depression and anxiety</span></div>
+    </div>
+    <div class="findings">
+      <div class="finding"><span class="topic">Sleep</span><p>Toddlers who use touchscreens daily tend to sleep less at night.</p></div>
+      <div class="finding"><span class="topic">Speech</span><p>At 18 months, every extra 30 minutes a day on a handheld device was linked to more than double the odds of delayed talking.</p></div>
+      <div class="finding"><span class="topic">School</span><p>Kindergarteners with more than 1 hour of screen time a day were more likely to struggle with social skills, language and communication.</p></div>
+      <div class="finding"><span class="topic">Mood</span><p>In teens and young adults, problematic smartphone use was linked to about three times the odds of depression and anxiety.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band tint" id="swaps">
+  <div class="inner">
+    <div class="band-head">
+      <h2>3 easy swaps</h2>
+      <p>Small changes that fit into everyday family life.</p>
+    </div>
+    <div class="swaps">
+      <div class="swap">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2f6fa8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5z"/><path d="M12 6v13"/></svg></div>
+        <h3>Screen-free hour before bed</h3>
+        <p>Screens close to bedtime are linked to toddlers getting less sleep at night. Turning devices off an hour before bed gives your child time to wind down.</p>
+        <p class="try"><span>Try this:</span> Make it part of the bedtime routine. Bath, pajamas, then a story or two together instead of a show.</p>
+      </div>
+      <div class="swap">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2f6fa8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M3 4v6a2 2 0 0 0 2 2v8M5 4v4M21 4c-1.5 1-2 3-2 5v3h2v8"/></svg></div>
+        <h3>Device-free meals</h3>
+        <p>Young children learn to talk through back-and-forth conversation with the adults around them. Mealtimes are one of the easiest daily chances for that.</p>
+        <p class="try"><span>Try this:</span> Keep phones and tablets away from the table and ask, "What was the best part of your day?" Even short answers count as practice.</p>
+      </div>
+      <div class="swap">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2f6fa8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Watch together</h3>
+        <p>When screens are used, watching with your child turns it into a shared activity instead of time spent alone with a device.</p>
+        <p class="try"><span>Try this:</span> Sit with them, point to what's happening on the screen and ask questions like "What do you think happens next?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="inner links">
+    <div class="band-head" style="margin-bottom:0">
+      <h2>Links, not proof</h2>
+    </div>
+    <p>Most of these studies are correlational. That means they show screens and outcomes like sleep or speech go together, but they can't prove that screens are the cause. Still, studies using different methods in different places keep pointing in the same direction. That is why Canada's guideline exists, and why small changes at home are worth trying.</p>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="inner">
+    <p>Research shows links, not proof, but small changes still count.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <span>Toddlers and Tablets</span>
+    <span>Idana Vitale · HLTH 205 Case Study</span>
+  </div>
+</footer>
+
+</body></html>
